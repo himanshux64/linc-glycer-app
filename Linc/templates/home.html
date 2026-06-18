@@ -3,9 +3,94 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Home | Linc Pens</title>
+
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+            margin:0;
+            padding:0;
+            background:#f4f4f4;
+        }
+
+        header{
+            background:#003366;
+            color:white;
+            text-align:center;
+            padding:20px;
+        }
+
+        nav{
+            background:#0055aa;
+            padding:10px;
+            text-align:center;
+        }
+
+        nav a{
+            color:white;
+            text-decoration:none;
+            margin:0 15px;
+            font-size:18px;
+        }
+
+        .container{
+            text-align:center;
+            padding:50px;
+        }
+
+        .btn{
+            display:inline-block;
+            background:#003366;
+            color:white;
+            padding:12px 25px;
+            text-decoration:none;
+            border-radius:5px;
+            margin-top:20px;
+        }
+
+        .btn:hover{
+            background:#0055aa;
+        }
+
+        footer{
+            background:#003366;
+            color:white;
+            text-align:center;
+            padding:15px;
+            position:fixed;
+            bottom:0;
+            width:100%;
+        }
+    </style>
 </head>
 <body>
-    <h1>home apge</h1>
+
+<header>
+    <h1>Welcome to Linc Pens</h1>
+    <p>Smooth Writing Experience</p>
+</header>
+
+<nav>
+    <a href="{% url 'home' %}">Home</a>
+    <a href="{% url 'glycer' %}">Linc Glycer Pen</a>
+</nav>
+
+<div class="container">
+    <h2>Premium Writing Instruments</h2>
+    <p>
+        Discover the smooth and comfortable writing experience of
+        Linc Glycer Pens.
+    </p>
+
+    <a href="{% url 'glycer' %}" class="btn">
+        View Linc Glycer Pen
+    </a>
+</div>
+
+<footer>
+    <p>&copy; 2026 Linc Pens. All Rights Reserved.</p><br>
+    <p> Build by Himu</p>
+</footer>
+
 </body>
 </html>
