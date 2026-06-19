@@ -3,47 +3,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Info of Pen </title>
+    <title>Info of Pen</title>
+
+    <style>
+        body {
+            background-color: #f4f6f9;
+            font-family: Arial, sans-serif;
+            color: #333;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #0066cc;
+        }
+
+        h2 {
+            color: #008000;
+        }
+
+        p {
+            color: #444;
+            line-height: 1.6;
+        }
+
+        ul {
+            background-color: white;
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        li {
+            color: #555;
+            margin: 8px 0;
+        }
+    </style>
 </head>
 <body>
-    <p>Linc Pen & Plastics Ltd. is a well-known Indian stationery company that manufactures and sells pens, pencils, markers, notebooks, and other writing products.
 
-<h2>Company Overview</h2>
-<ul>
-    <ol>
-        Founded: 1994
-        Headquarters: Kolkata, West Bengal, India
-        Industry: Stationery and writing instruments
-        Products: Ball pens, gel pens, roller pens, mechanical pencils, markers, notebooks, and related stationery items.
-    </ol>
-</ul>
+    <div class="center">
+        <a href="{% url 'home' %}" class="btn">← Back to Home</a>
+    </div>
 
-<h2>Popular Linc Pen Products</h2>
-<ul>
-    <ol>
-        Linc Glycer (gel pen)
-        Linc Pentonic (popular low-cost ball pen)
-        Linc Ocean Gel
-        Linc Signeta
-    </ol>
-</ul>
+    <h1>Linc Pen & Plastics Ltd.</h1>
 
-<h2>Linc Executive series</h2>
-<ul><ol>
-    Features of Linc Pens
-    Smooth writing experience
-    Affordable pricing
-    Widely available across India
-    Variety of ink colors and tip sizes
-    Designed for students, offices, and everyday use
-    Pentonic Series
-    Lightweight design
-    Smooth low-viscosity ink
-    Comfortable grip
-    Fine and consistent writing
-    Budget-friendly price
-</ol></ul>
+    <p>
+        Linc Pen & Plastics Ltd. is a well-known Indian stationery company
+        that manufactures and sells pens, pencils, markers, notebooks,
+        and other writing products.
+    </p>
 
-</p>
+    <h2>Company Overview</h2>
+    <ul>
+        <li>Founded: 1994</li>
+        <li>Headquarters: Kolkata, West Bengal, India</li>
+        <li>Industry: Stationery and Writing Instruments</li>
+        <li>Products: Ball pens, gel pens, roller pens, mechanical pencils, markers, notebooks</li>
+    </ul>
+
+    <h2>Popular Linc Pen Products</h2>
+    <ul>
+        <li>Linc Glycer (Gel Pen)</li>
+        <li>Linc Pentonic</li>
+        <li>Linc Ocean Gel</li>
+        <li>Linc Signeta</li>
+    </ul>
+
+    <h2>Linc Executive Series Features</h2>
+    <ul>
+        <li>Smooth Writing Experience</li>
+        <li>Affordable Pricing</li>
+        <li>Widely Available Across India</li>
+        <li>Variety of Ink Colors and Tip Sizes</li>
+        <li>Designed for Students and Offices</li>
+        <li>Lightweight Design</li>
+        <li>Smooth Low-Viscosity Ink</li>
+        <li>Comfortable Grip</li>
+        <li>Fine and Consistent Writing</li>
+        <li>Budget-Friendly Price</li>
+    </ul>
+
 </body>
 </html>
