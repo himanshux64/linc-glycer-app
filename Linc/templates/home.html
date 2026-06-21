@@ -1,96 +1,93 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home | Linc Pens</title>
+{% extends "layouts.html" %}
+{% block title %}Enterprise Dashboard{% endblock %}
+{% block content %}
+<div class="min-h-screen bg-slate-100">
+  <nav class="bg-white border-b sticky top-0 z-50">
+    <div class="px-6 py-4 flex justify-between items-center">
+      <div class="flex items-center gap-4">
+        <h1 class="text-2xl font-bold">Nova Analytics</h1>
+        <input class="border rounded-xl px-4 py-2 w-80" placeholder="Search...">
+      </div>
+      <div class="flex items-center gap-4">
+        <button>🔔</button>
+        <div class="rounded-full w-10 h-10 bg-slate-800 text-white flex items-center justify-center">H</div>
+      </div>
+    </div>
+  </nav>
 
-    <style>
-        body{
-            font-family: Arial, sans-serif;
-            margin:0;
-            padding:0;
-            background:#f4f4f4;
+  <div class="flex">
+    <aside class="w-72 bg-white min-h-screen border-r p-6">
+      <ul class="space-y-3">
+        <li class="font-semibold">Dashboard</li>
+        <li>Analytics</li>
+        <li>Customers</li>
+        <li>Projects</li>
+        <li>Orders</li>
+        <li>Settings</li>
+      </ul>
+    </aside>
+
+    <main class="flex-1 p-8 space-y-8">
+      <section class="rounded-3xl bg-slate-900 text-white p-10">
+        <h2 class="text-5xl font-bold">Business Intelligence Dashboard</h2>
+        <p class="mt-4 text-slate-300">Revenue, customers, AI insights and operations.</p>
+      </section>
+
+      <section class="grid md:grid-cols-2 xl:grid-cols-4 gap-6">
+        <div class="bg-white p-6 rounded-3xl shadow"><h3>Revenue</h3><p class="text-4xl font-bold">$128K</p></div>
+        <div class="bg-white p-6 rounded-3xl shadow"><h3>Customers</h3><p class="text-4xl font-bold">24,892</p></div>
+        <div class="bg-white p-6 rounded-3xl shadow"><h3>Orders</h3><p class="text-4xl font-bold">9,341</p></div>
+        <div class="bg-white p-6 rounded-3xl shadow"><h3>Conversion</h3><p class="text-4xl font-bold">7.4%</p></div>
+      </section>
+
+      <section class="grid lg:grid-cols-3 gap-6">
+        <div class="lg:col-span-2 bg-white rounded-3xl p-6 shadow">
+          <h3 class="text-xl font-bold mb-4">Revenue Analytics</h3>
+          <canvas id="revenueChart"></canvas>
+        </div>
+        <div class="bg-slate-900 text-white rounded-3xl p-6">
+          <h3 class="text-xl font-bold mb-4">AI Insights</h3>
+          <div class="space-y-3">
+            <div class="bg-slate-800 p-4 rounded-xl">Revenue +24% predicted</div>
+            <div class="bg-slate-800 p-4 rounded-xl">Retention improving</div>
+            <div class="bg-slate-800 p-4 rounded-xl">Sales anomaly detected</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="grid lg:grid-cols-2 gap-6">
+        <div class="bg-white rounded-3xl p-6 shadow">
+          <h3 class="font-bold text-xl mb-4">Projects</h3>
+          <table class="w-full">
+            <tr><th>Project</th><th>Status</th></tr>
+            <tr><td>AI Dashboard</td><td>Active</td></tr>
+            <tr><td>E-Commerce</td><td>Planning</td></tr>
+          </table>
+        </div>
+        <div class="bg-white rounded-3xl p-6 shadow">
+          <h3 class="font-bold text-xl mb-4">Activity Feed</h3>
+          <div class="space-y-4">
+            <div>New order received</div>
+            <div>Customer registered</div>
+            <div>Project updated</div>
+          </div>
+        </div>
+      </section>
+
+      <script>
+      document.addEventListener('DOMContentLoaded', function(){
+        if (typeof Chart !== 'undefined') {
+          new Chart(document.getElementById('revenueChart'), {
+            type:'line',
+            data:{
+              labels:['Jan','Feb','Mar','Apr','May','Jun'],
+              datasets:[{label:'Revenue',data:[12,18,25,30,42,58]}]
+            }
+          });
         }
-
-        header{
-            background:#003366;
-            color:white;
-            text-align:center;
-            padding:20px;
-        }
-
-        nav{
-            background:#0055aa;
-            padding:10px;
-            text-align:center;
-        }
-
-        nav a{
-            color:white;
-            text-decoration:none;
-            margin:0 15px;
-            font-size:18px;
-        }
-
-        .container{
-            text-align:center;
-            padding:50px;
-        }
-
-        .btn{
-            display:inline-block;
-            background:#003366;
-            color:white;
-            padding:12px 25px;
-            text-decoration:none;
-            border-radius:5px;
-            margin-top:20px;
-        }
-
-        .btn:hover{
-            background:#0055aa;
-        }
-
-        footer{
-            background:#003366;
-            color:white;
-            text-align:center;
-            padding:15px;
-            position:fixed;
-            bottom:0;
-            width:100%;
-        }
-    </style>
-</head>
-<body>
-
-<header>
-    <h1>Welcome to Linc Pens</h1>
-    <p>Smooth Writing Experience</p>
-</header>
-
-<nav>
-    <a href="{% url 'home' %}">Home</a>
-    <a href="{% url 'glycer' %}">Linc Glycer Pen</a>
-</nav>
-
-<div class="container">
-    <h2>Premium Writing Instruments</h2>
-    <p>
-        Discover the smooth and comfortable writing experience of
-        Linc Glycer Pens.
-    </p>
-
-    <a href="{% url 'glycer' %}" class="btn">
-        View Linc Glycer Pen
-    </a>
+      });
+      </script>
+    </main>
+  </div>
 </div>
-
-<footer>
-    <p>&copy; 2026 Linc Pens. All Rights Reserved.</p><br>
-    <p> Build by Himu</p>
-</footer>
-
-</body>
-</html>
+{% endblock %}

@@ -1,19 +1,24 @@
 {% load static %}
-{% extends "home.html" %}
+{% load tailwind_tags %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    {% block title %}
-    Deafault page
-    {% endblock %}
-    <link rel="stylesheet" href="{% static "style.css" %}">
+    <title>
+        {% block title %}
+        Default values
+        {% endblock %}
+    </title>
+
+    {% tailwind_css %}
 </head>
 <body>
-    <h1>layouts</h1>
-    {% block content %}
-    
-    {% endblock %}
+
+{% block content %}
+<h1 class="bg-"> Hey I Am Himanshu Kumar</h1>
+{% endblock %}
+
 </body>
 </html>

@@ -23,5 +23,7 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path('',views.home,name='home'),
     path('glycer',views.glycer,name='glycer'),
-    path('Pen',include('Pen.urls'))
+    path('Pen',include('Pen.urls')),
+
+    path("__reload__",include("django_browser_reload.urls"))
 ]
