@@ -43,10 +43,14 @@ INSTALLED_APPS = [
     "django_browser_reload"
 ]
 
+# Tailwind defination 
+
 TAILWIND_APP_NAME = 'theme'
 INTERNAL_IPS = ['127.0.0.1']
 
 NPM_BIN_PATH = r"C:\Program Files\nodejs\npm.cmd"
+
+
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
@@ -57,7 +61,7 @@ MIDDLEWARE = [
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 
-    "django_browser_reload.middleware.BrowserReloadMiddleware", 
+    "django_browser_reload.middleware.BrowserReloadMiddleware",  # django-browser[reload]
 ]
 
 ROOT_URLCONF = "Linc.urls"
@@ -65,7 +69,7 @@ ROOT_URLCONF = "Linc.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": ['templates'],
+        "DIRS": ['templates'],  # Templates 
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -124,6 +128,9 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/6.0/howto/static-files/
+
+
+# Static Files and Directory 
 
 STATIC_URL = "static/"
 STATICFILES_DIRS = [os.path.join(BASE_DIR,'static')]
