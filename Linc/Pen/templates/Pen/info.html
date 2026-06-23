@@ -6,5 +6,22 @@ Deafault page
 
 
 {% block content %}
+
+
+
 <h1>Layouts Page</h1>
+
+{% for pen in pens  %}
+<div class='pen-item'>
+<img src="{{pen.image.url}}" alt="">
+<h3>{{pen.name}}</h3>
+</div>
+
+<h1>{{pen.company}}</h1>
+
+{% endfor %}
+
+
+
+
 {% endblock %}
